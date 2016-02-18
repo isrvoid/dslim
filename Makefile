@@ -13,7 +13,7 @@ BUILDDIR := build
 UNITTEST_SRC := $(shell find $(SRCDIR) -type f -name "*.d")
 
 $(BUILDDIR)/unittest: $(UNITTEST_SRC)
-	@dmd $(DFLAGS) -main $^ -of$@
+	@dmd $(DFLAGS) $^ -of$@
 
 clean:
 	-@$(RM) $(wildcard $(BUILDDIR)/*)
