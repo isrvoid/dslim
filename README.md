@@ -14,5 +14,5 @@ There is no need to write separate functions that take a member struct as first 
 ##Non Goals
 This version will not support the following features:
 - addition of fixture modules at runtime
-> **TODO:**
-> add another item or two
+- default constructor parameters
+**TODO:** add another item or two
