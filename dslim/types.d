@@ -1,5 +1,7 @@
 module dslim.types;
 
+import std.variant : Algebraic;
+import std.array : Appender;
 import std.conv : text;
 
 @safe:
@@ -35,3 +37,15 @@ enum SlimVersion : string
     SLIM_HEADER = "Slim -- V",
     LENGTH_FORMAT = "%0" ~ MINIMUM_NUMBER_LENGTH.text() ~ "d:" // "%06d:"
 }
+
+class TurtleStringList
+{
+    private Appender!(TurtleString[]) list;
+    alias list this;
+
+    override string toString() @system
+    {
+        return list.data.text();
+    }
+}
+alias TurtleString = Algebraic!(string, TurtleStringList);
